@@ -217,3 +217,33 @@ class Keyboard extends InputDevice{
         Keyboard #${this.keyboardNumber}`
     }
 }
+
+class Monitor extends OutputDevice{
+    static monitorsCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Monitor.monitorsCounter;
+        this.monitorNumber=Monitor.monitorsCounter;
+        this._ref=ref;
+        super.outputType="Monitor";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Monitor #${this.monitorNumber}`
+    }
+}
