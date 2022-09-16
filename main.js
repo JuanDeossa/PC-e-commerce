@@ -157,3 +157,63 @@ class OuterComponent extends Product{
         Outer #${this.outerNumber}`
     }
 }
+
+class Mouse extends InputDevice{
+    static mousesCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Mouse.mousesCounter;
+        this.mouseNumber=Mouse.mousesCounter;
+        this._ref=ref;
+        super.inputType="Mouse";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Mouse #${this.mouseNumber}`
+    }
+}
+
+class Keyboard extends InputDevice{
+    static keyboardsCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Keyboard.keyboardsCounter;
+        this.keyboardNumber=Keyboard.keyboardsCounter;
+        this._ref=ref;
+        super.inputType="keyboard";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Keyboard #${this.keyboardNumber}`
+    }
+}
