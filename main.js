@@ -52,7 +52,7 @@ class OutputDevice extends Product{
         ++OutputDevice.outputDevicesCounter;
         this.outputNumber=OutputDevice.outputDevicesCounter;
         this._outputType=outputType;
-        super.type="Output";
+        super.type="Output Device";
     }
     get outputType(){
         return this._outputType
@@ -82,7 +82,7 @@ class InputDevice extends Product{
         ++InputDevice.inputDevicesCounter;
         this.inputNumber=InputDevice.inputDevicesCounter;
         this._inputType=inputType;
-        super.type="Input";
+        super.type="Input Device";
     }
     get inputType(){
         return this._inputType
@@ -95,6 +95,36 @@ class InputDevice extends Product{
         ${super.toString()} 
         Input Type: ${this.inputType}
         Input #${this.inputNumber}`
+    }
+}
+
+class InnerComponent extends Product{
+    static innerComponentsCounter=0
+    constructor({
+        brand,
+        price,
+        innerType,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++InnerComponent.innerComponentsCounter;
+        this.innerNumber=InnerComponent.innerComponentsCounter;
+        this._innerType=innerType;
+        super.type="Inner Component";
+    }
+    get innerType(){
+        return this._innerType
+    }
+    set innerType(innerType){
+        this._innerType=innerType
+    }
+    toString(){
+        return `
+        ${super.toString()} 
+        Inner Type: ${this.innerType}
+        Inner #${this.innerNumber}`
     }
 }
 
