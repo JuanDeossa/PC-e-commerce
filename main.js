@@ -128,3 +128,32 @@ class InnerComponent extends Product{
     }
 }
 
+class OuterComponent extends Product{
+    static outerComponentsCounter=0
+    constructor({
+        brand,
+        price,
+        outerType,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++OuterComponent.outerComponentsCounter;
+        this.outerNumber=OuterComponent.outerComponentsCounter;
+        this._outerType=outerType;
+        super.type="Outer Component";
+    }
+    get outerType(){
+        return this._outerType
+    }
+    set outerType(outerType){
+        this._outerType=outerType
+    }
+    toString(){
+        return `
+        ${super.toString()} 
+        Outer Type: ${this.outerType}
+        Outer #${this.outerNumber}`
+    }
+}
