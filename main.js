@@ -34,26 +34,55 @@ class Product{
         Type: ${this.type}
         Brand: ${this.brand}
         Price: ${this.price}
-        Product #${this.productNumber}
-        `
+        Product #${this.productNumber}`
     }
 }
+
+class OutputDevice extends Product{
+    static outputDevicesCounter=0
+    constructor({
+        brand,
+        price,
+        outputType,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++OutputDevice.outputDevicesCounter;
+        this.outputNumber=OutputDevice.outputDevicesCounter;
+        this._outputType=outputType;
+        super.type="Output";
+    }
+    get outputType(){
+        return this._outputType
+    }
+    set outputType(outputType){
+        this._outputType=outputType
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Output Type: ${this.outputType}
+        Output #${this.outputNumber}`
+    }
+}
+
 class InputDevice extends Product{
     static inputDevicesCounter=0
     constructor({
-        type,
         brand,
         price,
         inputType,
     }){
         super({
-            type,
             brand,
             price,
         })
         ++InputDevice.inputDevicesCounter;
         this.inputNumber=InputDevice.inputDevicesCounter;
         this._inputType=inputType;
+        super.type="Input";
     }
     get inputType(){
         return this._inputType
@@ -65,53 +94,7 @@ class InputDevice extends Product{
         return `
         ${super.toString()} 
         Input Type: ${this.inputType}
-        Input #${this.inputNumber}
-        `
-    }
-}
-class OutputDevice extends Product{
-    static outputDevicesCounter=0
-    constructor({
-        type,
-        brand,
-        price,
-        outputType,
-    }){
-        super({
-            type,
-            brand,
-            price,
-        })
-        ++OutputDevice.outputDevicesCounter;
-        this.outputNumber=OutputDevice.outputDevicesCounter;
-        this._outputType=outputType;
-    }
-    get outputType(){
-        return this._outputType
-    }
-    set outputType(outputType){
-        this._outputType=outputType
-    }
-    toString(){
-        return `
-        ${super.toString()} 
-        Output Type: ${this.outputType}
-        Output #${this.outputNumber}
-        `
+        Input #${this.inputNumber}`
     }
 }
 
-const mou1 = new InputDevice({
-    type:"Input",
-    brand:"Razer",
-    price:1200,
-    inputType:"Mouse",
-});
-console.log(mou1.toString());
-const mon1 = new OutputDevice({
-    type:"Output",
-    brand:"Aorus",
-    price:1500,
-    outputType:"Monitor",
-});
-console.log(mon1.toString());
