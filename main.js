@@ -247,3 +247,183 @@ class Monitor extends OutputDevice{
         Monitor #${this.monitorNumber}`
     }
 }
+
+class Ram extends InnerComponent{
+    static ramsCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Ram.ramsCounter;
+        this.ramNumber=Ram.ramsCounter;
+        this._ref=ref;
+        super.innerType="Ram";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Ram #${this.ramNumber}`
+    }
+}
+
+class Gpu extends InnerComponent{
+    static gpusCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Gpu.gpusCounter;
+        this.gpuNumber=Gpu.gpusCounter;
+        this._ref=ref;
+        super.innerType="gpu";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Gpu #${this.gpuNumber}`
+    }
+}
+
+class Cpu extends InnerComponent{
+    static cpusCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Cpu.cpusCounter;
+        this.cpuNumber=Cpu.cpusCounter;
+        this._ref=ref;
+        super.innerType="cpu";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Cpu #${this.cpuNumber}`
+    }
+}
+
+class Board extends InnerComponent{
+    static boardsCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Board.boardsCounter;
+        this.boardNumber=Board.boardsCounter;
+        this._ref=ref;
+        super.innerType="board";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Board #${this.boardNumber}`
+    }
+}
+
+class Psu extends InnerComponent{
+    static psusCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Psu.psusCounter;
+        this.psuNumber=Psu.psusCounter;
+        this._ref=ref;
+        super.innerType="psu";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Psu #${this.psuNumber}`
+    }
+}
+
+class StorageDrive extends InnerComponent{
+    static storageDrivesCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++StorageDrive.storageDrivesCounter;
+        this.storageDriveNumber=StorageDrive.storageDrivesCounter;
+        this._ref=ref;
+        super.innerType="storageDrive";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Storage Drive #${this.storageDriveNumber}`
+    }
+}
