@@ -427,3 +427,63 @@ class StorageDrive extends InnerComponent{
         Storage Drive #${this.storageDriveNumber}`
     }
 }
+
+class Case extends OuterComponent{
+    static casesCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Case.casesCounter;
+        this.caseNumber=Case.casesCounter;
+        this._ref=ref;
+        super.outerType="case";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Case #${this.caseNumber}`
+    }
+}
+
+class Ups extends OuterComponent{
+    static upssCounter=0
+    constructor({
+        brand,
+        price,
+        ref,
+    }){
+        super({
+            brand,
+            price,
+        })
+        ++Ups.upssCounter;
+        this.upsNumber=Ups.upssCounter;
+        this._ref=ref;
+        super.outerType="ups";
+    }
+    get ref(){
+        return this._ref
+    }
+    set ref(ref){
+        this._ref=ref
+    }
+    toString(){
+        return `
+        ${super.toString()}
+        Ref: ${this.ref}
+        Ups #${this.upsNumber}`
+    }
+}
