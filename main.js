@@ -254,6 +254,7 @@ class Ram extends InnerComponent{
         brand,
         price,
         ref,
+        speed,
     }){
         super({
             brand,
@@ -262,7 +263,14 @@ class Ram extends InnerComponent{
         ++Ram.ramsCounter;
         this.ramNumber=Ram.ramsCounter;
         this._ref=ref;
+        this._speed=speed;
         super.innerType="Ram";
+    }
+    get speed(){
+        return this._speed
+    }
+    set speed(speed){
+        this._speed=speed
     }
     get ref(){
         return this._ref
@@ -274,6 +282,7 @@ class Ram extends InnerComponent{
         return `
         ${super.toString()}
         Ref: ${this.ref}
+        Memory Speed: ${this._speed}
         Ram #${this.ramNumber}`
     }
 }
@@ -404,6 +413,7 @@ class StorageDrive extends InnerComponent{
         brand,
         price,
         ref,
+        driveType,
     }){
         super({
             brand,
@@ -412,7 +422,14 @@ class StorageDrive extends InnerComponent{
         ++StorageDrive.storageDrivesCounter;
         this.storageDriveNumber=StorageDrive.storageDrivesCounter;
         this._ref=ref;
+        this._driveType=driveType
         super.innerType="storageDrive";
+    }
+    get driveType(){
+        return this._driveType
+    }
+    set driveType(driveType){
+        this._driveType=driveType
     }
     get ref(){
         return this._ref
@@ -423,6 +440,7 @@ class StorageDrive extends InnerComponent{
     toString(){
         return `
         ${super.toString()}
+        Drive Storage Type: ${this._driveType}
         Ref: ${this.ref}
         Storage Drive #${this.storageDriveNumber}`
     }
