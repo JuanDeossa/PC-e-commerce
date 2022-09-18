@@ -582,3 +582,83 @@ class Order{
         return ""
     }
 }
+
+// Product.
+
+const boardX570 = new Board({
+    brand:"Gigabyte Aorus",
+    price:168,
+    ref:"X-570",
+});
+const boardZ690 = new Board({
+    brand:"ASUS ROG Strix",
+    price:429.99,
+    ref:"Z-690-E",
+});
+const cpuR7_5800X = new Cpu({
+    brand:"AMD",
+    price:257,
+    ref:"Ryzen 7-5800X",
+});
+const cpui9_12900K = new Cpu({
+    brand:"Intel",
+    price:588,
+    ref:"i9-12900K",
+});
+const gpuRTX3090Ti = new Gpu({
+    brand:"Msi suprimX",
+    price:1099,
+    ref:"RTX 3090ti",
+});
+const gpuRTX3080TiRog = new Gpu({
+    brand:"ASUS ROG Strix",
+    price:1020,
+    ref:"RTX 3080ti",
+});
+const gpuRTX3080Ti = new Gpu({
+    brand:"Msi suprimX",
+    price:999,
+    ref:"RTX 3080ti",
+});
+const ramCorsair32 = new Ram({
+    brand:"Corsair Dominator Platinum",
+    price:209.99,
+    ref:"32GB (4x8GB)",
+    speed:3600,
+});
+const psuSegotep750W80pG= new Psu({
+    brand:"Segotep",
+    price:99,
+    ref:"750W 80+ Gold",
+});
+const caseXpgBC= new Case({
+    brand:"Xpg",
+    price:139,
+    ref:"Battle Cruiser",
+});
+const monitorSceptre4K= new Monitor({
+    brand:"Sceptre",
+    price:499,
+    ref:"C408B-QWN168W",
+});
+const keyboardRazerBW= new Keyboard({
+    brand:"Razer",
+    price:119,
+    ref:"Black Widow",
+});
+const mouseRazerViper= new Mouse({
+    brand:"Razer",
+    price:142,
+    ref:"Viper V2 Pro",
+});
+const upsApc700vA= new Ups({
+    brand:"Apc",
+    price:110,
+    ref:"Br700g",
+});
+const storageDriveSsd1TB = new StorageDrive({
+    brand:"Samsung",
+    price:100,
+    ref:"970 EVO plus 1TB",
+    driveType:"SSD",
+});
