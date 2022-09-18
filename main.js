@@ -711,3 +711,12 @@ const pcintel_B = new Pc({
     mouse:mouseRazerViper,
     ups:upsApc700vA,
 });
+
+const Order1 = new Order();
+
+Order1.addPc(pcAmd_A)
+Order1.addPc(pcAmd_B)
+Order1.addPc(pcintel_A)
+
+
+console.log(Order1.showOrder());
