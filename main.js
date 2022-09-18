@@ -662,3 +662,52 @@ const storageDriveSsd1TB = new StorageDrive({
     ref:"970 EVO plus 1TB",
     driveType:"SSD",
 });
+
+const pcAmd_A = new Pc({
+    board:boardX570,
+    cpu:cpuR7_5800X,
+    gpu:gpuRTX3090Ti,
+    psu:psuSegotep750W80pG,
+    ram:ramCorsair32,
+    caSe:caseXpgBC,
+    monitor:monitorSceptre4K,
+    keyboard:keyboardRazerBW,
+    mouse:mouseRazerViper,
+    ups:upsApc700vA,
+});
+const pcintel_A = new Pc({
+    board:boardZ690,
+    cpu:cpui9_12900K,
+    gpu:gpuRTX3090Ti,
+    psu:psuSegotep750W80pG,
+    ram:ramCorsair32,
+    caSe:caseXpgBC,
+    monitor:monitorSceptre4K,
+    keyboard:keyboardRazerBW,
+    mouse:mouseRazerViper,
+    ups:upsApc700vA,
+});
+const pcAmd_B = new Pc({
+    board:boardX570,
+    cpu:cpuR7_5800X,
+    gpu:gpuRTX3080Ti,
+    psu:psuSegotep750W80pG,
+    ram:ramCorsair32,
+    caSe:caseXpgBC,
+    monitor:monitorSceptre4K,
+    keyboard:keyboardRazerBW,
+    mouse:mouseRazerViper,
+    ups:upsApc700vA,
+});
+const pcintel_B = new Pc({
+    board:boardZ690,
+    cpu:cpui9_12900K,
+    gpu:gpuRTX3080TiRog,
+    psu:psuSegotep750W80pG,
+    ram:ramCorsair32,
+    caSe:caseXpgBC,
+    monitor:monitorSceptre4K,
+    keyboard:keyboardRazerBW,
+    mouse:mouseRazerViper,
+    ups:upsApc700vA,
+});
