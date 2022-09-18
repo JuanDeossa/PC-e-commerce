@@ -553,3 +553,32 @@ class Pc{
         return Total
     }
 }
+
+class Order{
+    static orderCounter=0
+    static maxPc = 3
+    constructor(){
+        this.ordernumber=++Order.orderCounter
+        this.pcArray=[];
+    }
+    addPc(pc){
+        if (this.pcArray.length<Order.maxPc) {
+            this.pcArray.push(pc)
+        }
+        else{
+            console.log(`you can't add more productos, the max number is ${Order.maxPc}`)
+        }
+    }
+    totalOrderPrice(){
+        let Total = [];
+        this.pcArray.forEach(i=>Total.push(i.totalPrice()))
+        Total = Total.map(i=>Number(i))
+        Total = Total.reduce((acc,i)=>acc+i,0)
+        return Total
+    }
+    showOrder(){
+        this.pcArray.forEach(i=>(console.log(i.showCombo())))
+        console.log("Total: "+this.totalOrderPrice());
+        return ""
+    }
+}
